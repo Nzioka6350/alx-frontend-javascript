@@ -1,4 +1,4 @@
-export function taskfirst() {
+export function taskfFrst() {
 	const task = 'I prefer const when I can.';
 	return task;
 }
