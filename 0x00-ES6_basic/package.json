@@ -3,6 +3,7 @@
   "version": "1.0.0",
   "description": "A project to learn the basics of ES6",
   "main": "index.js",
+  "type": "module",
   "scripts": {
     "test": "jest",
     "lint": "eslint .",
