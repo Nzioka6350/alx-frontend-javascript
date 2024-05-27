@@ -1,12 +1,20 @@
 {
-  "name": "0x00-ES6_basic",
+  "name": "es6-basics",
   "version": "1.0.0",
-  "description": "## Table of Contents - [Project Overview](#project-overview) - [Learning Objectives](#learning-objectives) - [Requirements](#requirements) - [Setup](#setup)   - [Install NodeJS](#install-nodejs)   - [Install Project Dependencies](#install-project-dependencies) - [Configuration Files](#configuration-files)   - [package.json](#packagejson)   - [babel.config.js](#babelconfigjs)   - [.eslintrc.js](#eslintrcjs) - [Usage](#usage) - [Resources](#resources)",
+  "description": "A project to learn the basics of ES6",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "jest",
+    "lint": "eslint ."
   },
-  "keywords": [],
   "author": "",
-  "license": "ISC"
+  "license": "ISC",
+  "devDependencies": {
+    "@babel/core": "^7.15.0",
+    "@babel/preset-env": "^7.15.0",
+    "babel-jest": "^27.0.6",
+    "eslint": "^7.32.0",
+    "jest": "^27.0.6"
+  },
+  "dependencies": {}
 }
