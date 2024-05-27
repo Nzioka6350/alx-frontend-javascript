@@ -1,0 +1,12 @@
+{
+  "name": "0x00-ES6_basic",
+  "version": "1.0.0",
+  "description": "## Table of Contents - [Project Overview](#project-overview) - [Learning Objectives](#learning-objectives) - [Requirements](#requirements) - [Setup](#setup)   - [Install NodeJS](#install-nodejs)   - [Install Project Dependencies](#install-project-dependencies) - [Configuration Files](#configuration-files)   - [package.json](#packagejson)   - [babel.config.js](#babelconfigjs)   - [.eslintrc.js](#eslintrcjs) - [Usage](#usage) - [Resources](#resources)",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}
