@@ -1,7 +1,7 @@
 {
   "name": "my-project",
   "version": "1.0.0",
-  "description": "",
+  "description": "## Overview This project focuses on ES6 Promises in JavaScript. It covers the fundamental concepts of promises, how to use them, and their role in handling asynchronous operations in JavaScript.",
   "main": "index.js",
   "scripts": {
     "test": "jest"
@@ -14,5 +14,6 @@
     "babel-jest": "^26.6.3",
     "eslint": "^7.14.0",
     "jest": "^26.6.3"
-  }
+  },
+  "keywords": []
 }
