@@ -1,4 +1,4 @@
-import asyncUploadUser from "./100-await";
+import asyncUploader from "./100-await";
 
 const test = async () => {
     const value = await asyncUploadUser();

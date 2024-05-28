@@ -1,251 +1,107 @@
 # 0x01. ES6 Promises
 
-## Overview
-This project focuses on ES6 Promises in JavaScript. It covers the fundamental concepts of promises, how to use them, and their role in handling asynchronous operations in JavaScript.
+## Description:bulb:
 
-## Learning Objectives
-By the end of this project, you should be able to:
-- Explain what promises are and why they are used.
-- Use `then`, `resolve`, and `catch` methods of promises.
-- Utilize every method of the Promise object.
-- Implement `try/catch` blocks.
-- Understand and use the `await` operator and `async` functions.
+One simply does not use async/await without knowing promises!
 
-## Requirements
-- All code files will be executed on Ubuntu 18.04 LTS using NodeJS 12.11.x.
-- Use allowed editors: vi, vim, emacs, Visual Studio Code.
-- All files should end with a new line.
-- A `README.md` file at the root of the project directory is mandatory.
-- Code should use the `.js` extension.
-- Code will be tested using Jest (`npm run test`).
-- Code will be verified against lint using ESLint.
-- All functions must be exported.
+- Promises (how, why, and what)
+- How to use the `then`, `resolve`, `catch` methods
+- How to use every method of the Promise object
+- Throw / Try
+- The await operator
+- How to use an `async` function
 
-## Setup
-1. **Install NodeJS 12.11.x**:
-    ```sh
-    curl -sL https://deb.nodesource.com/setup_12.x -o nodesource_setup.sh
-    sudo bash nodesource_setup.sh
-    sudo apt install nodejs -y
-    nodejs -v
-    # Output: v12.11.1
-    npm -v
-    # Output: 6.11.3
-    ```
+## Technologies & Tools:computer:
 
-2. **Install Jest, Babel, and ESLint**:
-    In your project directory, install Jest, Babel, and ESLint using the supplied `package.json` file:
-    ```sh
-    npm install
-    ```
+[![Jest](https://img.shields.io/badge/≡-Jest-C21325?logo=Jest&style=flat-square&labelColor=282828&logoColor=C21325)](https://jestjs.io/)
+[![Git](https://img.shields.io/badge/≡-Git-F05032?logo=git&style=flat-square&labelColor=282828)](https://git-scm.com/)
+[![Ubuntu](https://img.shields.io/badge/≡-Ubuntu-E95420?&style=flat-square&logo=Ubuntu&labelColor=282828)](https://ubuntu.com/)
+[![Babel](https://img.shields.io/badge/≡-Babel-F9DC3E?logo=Babel&style=flat-square&labelColor=282828)](https://babeljs.io/)
+[![JavaScript](https://img.shields.io/badge/≡-JavaScript-F7DF1E?logo=javascript&style=flat-square&labelColor=282828)](https://developer.mozilla.org/en-US/docs/Web/javascript)
+[![GNU_Bash](https://img.shields.io/badge/≡-GNU_Bash-4EAA25?logo=GNU-Bash&style=flat-square&labelColor=282828)](https://www.gnu.org/software/bash/)
+[![Nodejs](https://img.shields.io/badge/≡-Nodejs-339933?logo=Node.js&style=flat-square&labelColor=282828)](https://nodejs.org/en/)
+[![Vim](https://img.shields.io/badge/≡-Vim-019733?logo=Vim&style=flat-square&logoColor=019733&labelColor=282828)](https://www.vim.org/)
+[![Vagrant](https://img.shields.io/badge/≡-Vagrant-1563FF?logo=vagrant&style=flat-square&logoColor=1563FF&labelColor=282828)](https://www.vagrantup.com/)
+[![VS_Code](https://img.shields.io/badge/≡-VS_Code-007ACC?logo=visual-studio-code&style=flat-square&logoColor=007ACC&labelColor=282828)](https://code.visualstudio.com/)
+[![ESLint](https://img.shields.io/badge/≡-ESLint-4B32C3?logo=ESLint&style=flat-square&labelColor=282828&logoColor=4B32C3)](https://eslint.org/)
+[![GitHub](https://img.shields.io/badge/≡-GitHub-181717?logo=GitHub&style=flat-square&labelColor=282828)](https://github.com/)
 
-## Configuration Files
-Add the following configuration files to your project directory:
+---
 
-- `package.json`
-- `babel.config.js`
-- `utils.js`
-- `.eslintrc.js`
+## Resources:books:
 
-## Response Data Format
-- `uploadPhoto` returns:
-    ```json
-    {
-      "status": 200,
-      "body": "photo-profile-1"
-    }
-    ```
-- `createUser` returns:
-    ```json
-    {
-      "firstName": "Guillaume",
-      "lastName": "Salva"
-    }
-    ```
+Read or watch:
 
-## Tasks
+- [Promise](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise)
+- [JavaScript Promise: An introduction](https://web.dev/promises/)
+- [Await](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/await)
+- [Async](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/async_function)
+- [Throw / Try](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/throw)
 
-### Task 0: Keep every promise you make and only make promises you can keep
-File: `0-promise.js`
+---
 
-Write a function `getResponseFromAPI` that returns a promise.
+## Requirements:hammer:
 
-```js
-export default function getResponseFromAPI() {
-    return new Promise((resolve) => {
-        resolve();
-    });
-}
+- Ubuntu 18.04 LTS using NodeJS 12.22.x
+- Jest Testing Framework
+- ESLint
+
+### Install NodeJS 12.22.x
+
+```console
+foo@pop-os:~$ curl -sL https://deb.nodesource.com/setup_12.x -o nodesource_setup.sh
+foo@pop-os:~$ sudo bash nodesource_setup.sh
+foo@pop-os:~$ sudo apt install nodejs -y
 ```
 
-### Task 1: Don't make a promise...if you know you can't keep it
-File: `1-promise.js`
+### Check version
 
-Write a function `getFullResponseFromAPI` that accepts a boolean parameter and returns a promise.
-
-```js
-export default function getFullResponseFromAPI(success) {
-    return new Promise((resolve, reject) => {
-        if (success) {
-            resolve({ status: 200, body: 'Success' });
-        } else {
-            reject(new Error('The fake API is not working currently'));
-        }
-    });
-}
+```console
+foo@pop-os:~$ nodejs -v
+v12.22.1
+foo@pop-os:~$ npm -v
+6.14.12
 ```
 
-### Task 2: Catch me if you can!
-File: `2-then.js`
+### Install Jest, Babel, and ESLint
 
-Write a function `handleResponseFromAPI` that appends handlers to a promise.
-
-```js
-export default function handleResponseFromAPI(promise) {
-    return promise
-        .then(() => ({ status: 200, body: 'success' }))
-        .catch(() => new Error())
-        .finally(() => console.log('Got a response from the API'));
-}
+```console
+foo@pop-os:~$ npm install --save-dev jest
+foo@pop-os:~$ npm install --save-dev babel-jest @babel/core @babel/preset-env
+foo@pop-os:~$ npm install --save-dev eslint
 ```
 
-### Task 3: Handle multiple successful promises
-File: `3-all.js`
+---
 
-Write a function `handleProfileSignup` that imports and uses `uploadPhoto` and `createUser` from `utils.js`.
+## Files:card_file_box:
 
-```js
-import { uploadPhoto, createUser } from './utils';
+### [0. Keep every promise you make and only make promises you can keep](./0-promise.js)
 
-export default function handleProfileSignup() {
-    return Promise.all([uploadPhoto(), createUser()])
-        .then((responses) => {
-            console.log(`${responses[0].body} ${responses[1].firstName} ${responses[1].lastName}`);
-        })
-        .catch(() => {
-            console.log('Signup system offline');
-        });
-}
-```
+### [1. Don't make a promise...if you know you can't keep it](./1-promise.js)
 
-### Task 4: Simple promise
-File: `4-user-promise.js`
+### [2. Catch me if you can!](./2-then.js)
 
-Write a function `signUpUser` that returns a resolved promise with the user object.
+### [3. Handle multiple successful promises](./3-all.js)
 
-```js
-export default function signUpUser(firstName, lastName) {
-    return Promise.resolve({ firstName, lastName });
-}
-```
+### [4. Simple promise](./4-user-promise.js)
 
-### Task 5: Reject the promises
-File: `5-photo-reject.js`
+### [5. Reject the promises](./5-photo-reject.js)
 
-Write a function `uploadPhoto` that returns a rejected promise with an error.
+### [6. Handle multiple promises](./6-final-user.js)
 
-```js
-export default function uploadPhoto(filename) {
-    return Promise.reject(new Error(`${filename} cannot be processed`));
-}
-```
+### [7. Load balancer](./7-load_balancer.js)
 
-### Task 6: Handle multiple promises
-File: `6-final-user.js`
+### [8. Throw error / try catch](./8-try.js)
 
-Write a function `handleProfileSignup` that calls `signUpUser` and `uploadPhoto`, and handles their promises.
+### [9. Throw an error](./9-try.js)
 
-```js
-import signUpUser from './4-user-promise';
-import uploadPhoto from './5-photo-reject';
+### [10. Await / Async](./100-await.js)
 
-export default function handleProfileSignup(firstName, lastName, fileName) {
-    return Promise.allSettled([signUpUser(firstName, lastName), uploadPhoto(fileName)])
-        .then((results) => {
-            return results.map((result) => ({
-                status: result.status,
-                value: result.value || result.reason,
-            }));
-        });
-}
-```
+---
 
-### Task 7: Load balancer
-File: `7-load_balancer.js`
+## Author
 
-Write a function `loadBalancer` that returns the value of the first resolved promise.
-
-```js
-export default function loadBalancer(chinaDownload, USDownload) {
-    return Promise.race([chinaDownload, USDownload]);
-}
-```
-
-### Task 8: Throw error / try catch
-File: `8-try.js`
-
-Write a function `divideFunction` that throws an error if the denominator is 0.
-
-```js
-export default function divideFunction(numerator, denominator) {
-    if (denominator === 0) {
-        throw new Error('cannot divide by 0');
-    }
-    return numerator / denominator;
-}
-```
-
-### Task 9: Throw an error
-File: `9-try.js`
-
-Write a function `guardrail` that handles errors and appends results to a queue.
-
-```js
-export default function guardrail(mathFunction) {
-    const queue = [];
-    try {
-        const result = mathFunction();
-        queue.push(result);
-    } catch (error) {
-        queue.push(error.toString());
-    } finally {
-        queue.push('Guardrail was processed');
-    }
-    return queue;
-}
-```
-
-### Task 10: Await / Async
-File: `100-await.js`
-
-Write an async function `asyncUploadUser` that calls `uploadPhoto` and `createUser`.
-
-```js
-import { uploadPhoto, createUser } from './utils';
-
-export default async function asyncUploadUser() {
-    try {
-        const [photo, user] = await Promise.all([uploadPhoto(), createUser()]);
-        return { photo, user };
-    } catch (error) {
-        return { photo: null, user: null };
-    }
-}
-```
-
-## Running the Project
-To run the project and test the implemented functions, use the following commands:
-
-```sh
-# To install dependencies
-npm install
-
-# To run tests
-npm run test
-
-# To run a specific file (e.g., 0-main.js)
-npm run dev 0-main.js
-```
-
-## Conclusion
-This project enhances your understanding of ES6 Promises and how they can be used to handle asynchronous operations effectively in JavaScript. It covers basic promise creation, chaining, error handling, and combining multiple promises using various methods.
+- **Joseph Mahiuha** (@Mahiuha) - [<img src="https://img.shields.io/badge/Portfolio-20d6fe.svg?&style=plastic"/>](https://mahiuha.github.io/josephmahiuha/)
+  [<img src="https://img.shields.io/badge/Twitter-1DA1F2.svg?&style=plastic&logo=twitter&logoColor=white"/>](https://twitter.com/Joseph_Mahiuha)
+  [<img src="https://img.shields.io/badge/Linkedin-0A66C2.svg?&style=plastic&logo=linkedin&logoColor=white"/>](https://www.linkedin.com/in/joseph-mahiuha-498a52162/)
+  [<img src="https://img.shields.io/badge/GitHub-181717.svg?&style=plastic&logo=github&logoColor=white"/>](https://github.com/Mahiuha)
